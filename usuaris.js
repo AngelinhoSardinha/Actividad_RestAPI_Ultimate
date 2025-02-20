@@ -62,6 +62,7 @@ app.put("/usuaris/:id", (req, res) => {
     const body = req.body;
     const id = parseInt(req.params.id);
     const userIndex = data.Usuaris.findIndex((user) => user.id === id);
+    console.log(userIndex);
     data.Usuaris[userIndex] = {
         ...data.Usuaris[userIndex],
         ...body,

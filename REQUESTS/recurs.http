@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
   "id" : 33,
-  "tipo" : "Equipament",
+  "tipo" : "Equipament"
 }
 ###
 DELETE http://localhost:3000/recursos/77 HTTP/1.1
