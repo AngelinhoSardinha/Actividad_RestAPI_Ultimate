@@ -1,16 +1,16 @@
 {
-    "notificacions" : [
+    "notificacions": [
         {
-            "id" : 1,
-            "title" : "Notificación 1",
-            "description" : "Descripción de la notificación 1",
-            "date" : "2021-01-01"
+            "id": 1,
+            "title": "Notificación 1",
+            "description": "Descripción de la notificación 1",
+            "date": "2021-01-01"
         },
         {
-            "id" : 2,
-            "title" : "Notificación 2",
-            "description" : "Descripción de la notificación 2",
-            "date" : "2021-01-02"
+            "id": 2,
+            "title": "Notificación 2",
+            "description": "Descripción de la notificación 2",
+            "date": "2021-01-02"
         },
         {
             "id" : 3,

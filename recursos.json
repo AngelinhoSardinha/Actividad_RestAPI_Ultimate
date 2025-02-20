@@ -1,19 +1,19 @@
 {
-    "recursos" : [
+    "recursos": [
         {
-            "id" : 11,
-            "tipo" : "Equipament",
-            "Estat" : "Disponible"
+            "id": 11,
+            "tipo": "Equipament",
+            "Estat": "Disponible"
         },
         {
-            "id" : 22,
-            "tipo" : "Sales",
-            "Estat" : "Reservat"
+            "id": 22,
+            "tipo": "Sales",
+            "Estat": "Reservat"
         },
         {
-            "id" : 33,
-            "tipo" : "Vehicles",
-            "Estat" : "Fora de servei"
+            "id": 33,
+            "tipo": "Vehicles",
+            "Estat": "Fora de servei"
         }
     ]
 }

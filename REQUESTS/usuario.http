@@ -1,0 +1,32 @@
+GET http://localhost:3000/usuaris
+
+###
+
+GET http://localhost:3000/usuaris/202
+
+###
+
+POST http://localhost:3000/usuaris HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 666,
+    "nom" : "Satanas",
+    "cognom" : "D'Jesus",
+    "email" : "RevelsebuCalienteCaliente@hot_mail.DL",
+    "Tipus" : "Admin"
+}
+
+###
+PUT http://localhost:3000/usuaris/303 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id" : 303,
+  "nom" : "Jesus",
+  "cognom" : "De Nasaret",
+  "email" : "TodoLoPuedoEnCristoQueMeFortalece@haven.com",
+}
+###
+DELETE http://localhost:3000/usuaris/666 HTTP/1.1
+

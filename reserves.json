@@ -1,19 +1,19 @@
 {
-    "reserves" : [
+    "reserves": [
         {
-            "id" : 111,
-            "Estat" : "Activa",
-            "Temps" : "2021-01-01"
+            "id": 111,
+            "Estat": "Activa",
+            "Temps": "2021-01-01"
         },
         {
-            "id" : 222,
-            "Estat" : "Cancel·lada",
-            "Temps" : "2021-01-02"
+            "id": 222,
+            "Estat": "Cancel·lada",
+            "Temps": "2021-01-02"
         },
         {
-            "id" : 333,
-            "Estat" : "Completada",
-            "Temps" : "2021-01-03"
+            "id": 333,
+            "Estat": "Cancel·lada",
+            "Temps": "2027-12-06"
         }
     ]
 }

@@ -1,0 +1,28 @@
+GET http://localhost:3000/reserves
+
+###
+
+GET http://localhost:3000/reserves/222
+
+###
+
+POST http://localhost:3000/reserves HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 888,
+    "Estat" : "Cancel·lada",
+    "Temps" : "2111-09-23"
+}
+
+###
+PUT http://localhost:3000/reserves/333 HTTP/1.1
+Content-Type: application/json
+
+{
+  "Estat" : "Cancel·lada",
+  "Temps" : "2027-12-06"
+}
+###
+DELETE http://localhost:3000/reserves/888 HTTP/1.1
+

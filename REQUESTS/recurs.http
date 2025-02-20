@@ -1,0 +1,28 @@
+GET http://localhost:3000/recursos
+
+###
+
+GET http://localhost:3000/recursos/22
+
+###
+
+POST http://localhost:3000/recursos HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 77,
+    "tipo" : "Vehicles",
+    "Estat" : "Fora de servei"
+}
+
+###
+PUT http://localhost:3000/recursos/33 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id" : 33,
+  "tipo" : "Equipament",
+}
+###
+DELETE http://localhost:3000/recursos/77 HTTP/1.1
+
