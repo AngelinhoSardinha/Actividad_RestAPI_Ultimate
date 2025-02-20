@@ -1,97 +1,86 @@
 import express from "express";
-import fs from "fs"; //treballar amb arxius
-import bodyParser from "body-parser"; //Ho afegim per entendre que estem rebent un json des de la petició post.
+import fs from "fs"; // Treballar amb arxius
+import bodyParser from "body-parser"; // Ho afegim per entendre que estem rebent un json des de la petició post.
 
-//Creo l'objecte de l'aplicació
-const app=express();
-app.use(bodyParser.json())
+// Creo l'objecte de l'aplicació
+const app = express();
+app.use(bodyParser.json());
 
-const readData=()=>{
-    try{
-        const data=fs.readFileSync("./db.json");
-        //console.log(data);
-        //console.log(JSON.parse(data));
-        return JSON.parse(data)
-
-    }catch(error){
+const readData = () => {
+    try {
+        const data = fs.readFileSync("./recursos.json");
+        return JSON.parse(data);
+    } catch (error) {
         console.log(error);
     }
 };
-//Funció per escriure informació
-const writeData=(data)=>{
-    try{
-        fs.writeFileSync("./db.json",JSON.stringify(data));
 
-    }catch(error){
+// Funció per escriure informació
+const writeData = (data) => {
+    try {
+        fs.writeFileSync("./recursos.json", JSON.stringify(data));
+    } catch (error) {
         console.log(error);
     }
-}
-//Funció per llegir la informació
-//readData();
+};
 
-app.get("/",(req,res)=>{
-    res.send("Wellcome to my first API with Node.js");
+// Ruta inicial
+app.get("/", (req, res) => {
+    res.send("Welcome to my first API with Node.js");
 });
 
-//Creem un endpoint per obtenir tots els llibres
-app.get("/books",(req,res)=>{
-    const data=readData();
-    res.json(data.books);
-})
-//Creem un endpoint per obtenir un llibre per un id
-app.get("/books/:id",(req,res)=>{
-    const data=readData();
-    //Extraiem l'id de l'url recordem que req es un objecte tipus requets
-    // que conté l'atribut params i el podem consultar
-    const id=parseInt(req.params.id);
-    const book=data.books.find((book)=>book.id===id);
-    res.json(book);
-})
+// Endpoint per obtenir tots els recursos
+app.get("/recursos", (req, res) => {
+    const data = readData();
+    res.json(data.recursos);
+});
 
-//Creem un endpoint del tipus post per afegir un llibre
+// Endpoint per obtenir un recurs per un id
+app.get("/recursos/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const recurso = data.recursos.find((recurso) => recurso.id === id);
+    res.json(recurso);
+});
 
-app.post("/books",(req,res)=>{
-    const data=readData();
-    const body=req.body;
-    //todo lo que viene en ...body se agrega al nuevo libro
-    const newBook={
-        id:data.books.length+1,
+// Endpoint POST per afegir un recurs
+app.post("/recursos", (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const newRecurso = {
+        id: data.recursos.length + 1,
         ...body,
     };
-    data.books.push(newBook);
+    data.recursos.push(newRecurso);
     writeData(data);
-    res.json(newBook);
+    res.json(newRecurso);
 });
 
-//Creem un endpoint per modificar un llibre
-
-
-app.put("/books/:id", (req, res) => {
+// Endpoint PUT per modificar un recurs
+app.put("/recursos/:id", (req, res) => {
     const data = readData();
     const body = req.body;
     const id = parseInt(req.params.id);
-    const bookIndex = data.books.findIndex((book) => book.id === id);
-    data.books[bookIndex] = {
-      ...data.books[bookIndex],
-      ...body,
+    const recursoIndex = data.recursos.findIndex((recurso) => recurso.id === id);
+    data.recursos[recursoIndex] = {
+        ...data.recursos[recursoIndex],
+        ...body,
     };
     writeData(data);
-    res.json({ message: "Book updated successfully" });
-  });
+    res.json({ message: "Recurso actualizado con éxito" });
+});
 
-//Creem un endpoint per eliminar un llibre
-app.delete("/books/:id", (req, res) => {
+// Endpoint DELETE per eliminar un recurs
+app.delete("/recursos/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
-    const bookIndex = data.books.findIndex((book) => book.id === id);
-    //splice esborra a partir de bookIndex, el número de elements 
-    // que li indiqui al segon argument, en aquest cas 1
-    data.books.splice(bookIndex, 1);
+    const recursoIndex = data.recursos.findIndex((recurso) => recurso.id === id);
+    data.recursos.splice(recursoIndex, 1);
     writeData(data);
-    res.json({ message: "Book deleted successfully" });
-  });
+    res.json({ message: "Recurso eliminado con éxito" });
+});
 
-//Funció per escoltar
-app.listen(3000,()=>{
-    console.log("Server listing on port 3000");
+// Funció per escoltar
+app.listen(3000, () => {
+    console.log("Server listening on port 3000");
 });
