@@ -21,7 +21,7 @@ const writeDataReservas = (data) => {
 };
 
 //Endpoint reservas
-app.get('/reserves', (req, res) => {
+router.get('/', (req, res) => {
     const user={name:"Angel"}
     const htmlMessage = `
     <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
@@ -32,10 +32,12 @@ app.get('/reserves', (req, res) => {
  });
 
  // Endpoint per obtenir una reserva per id
-app.get("/reserves/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     const data = readDataReservas();
     const user = {name:"Angel"}
     const id = parseInt(req.params.id);
     const reserva = data.reserves.find((reserva) => reserva.id === id);
     res.render("reservesDetall", {user, reserva});
 });
+
+export default router;

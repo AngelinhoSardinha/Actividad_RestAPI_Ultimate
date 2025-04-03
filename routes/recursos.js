@@ -40,3 +40,5 @@ router.get("/:id", (req, res) => {
     const recurso = data.recursos.find((recurso) => recurso.id === id);
     res.render("recursosDetall", {user, recurso})
 });
+
+export default router;
