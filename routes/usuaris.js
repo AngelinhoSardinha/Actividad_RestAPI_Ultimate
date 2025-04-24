@@ -4,18 +4,18 @@ import fs from 'fs';
 const router = express.Router()
 
 
-const readDataRecursos = () => {
+const readDataUsuaris = () => {
     try {
-        const data = fs.readFileSync("./recursos.json");
+        const data = fs.readFileSync("./usuaris.json");
         return JSON.parse(data);
     } catch (error) {
         console.log(error);
     }
 };
 
-const writeDataRecursos = (data) => {
+const writeDataUsuaris = (data) => {
     try {
-        fs.writeFileSync("./recursos.json", JSON.stringify(data));
+        fs.writeFileSync("./usuaris.json", JSON.stringify(data));
     } catch (error) {
         console.log(error);
     }
@@ -27,18 +27,18 @@ router.get('/', (req, res) => {
     const htmlMessage = `
     <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
     <a href="http://localhost:3002/">Home</a>`;
-    const data = readDataRecursos();
-    res.render("recursos",{user, data,htmlMessage})
+    const data = readDataUsuaris();
+    res.render("usuaris",{user, data,htmlMessage})
     //res.json(data.products);
  }); 
 
 // Endpoint per obtenir un recurs per un id
 router.get("/:id", (req, res) => {
-    const data = readDataRecursos();
+    const data = readDataUsuaris();
     const user = {name:"Angel"}
     const id = parseInt(req.params.id);
-    const recurso = data.recursos.find((recurso) => recurso.id === id);
-    res.render("recursosDetall", {user, recurso})
+    const usuari = data.usuaris.find((usuari) => usuari.id === id);
+    res.render("usuarisDetail", {user, usuari})
 });
 
 export default router;
