@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
     const user={name:"Angel"}
     const htmlMessage = `
     <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-    <a href="https://www.example.com">Visita Example</a>`;
+    <a href="http://localhost:3002/">Home</a>`;
     const data = readDataRecursos();
     res.render("recursos",{user, data,htmlMessage})
     //res.json(data.products);
