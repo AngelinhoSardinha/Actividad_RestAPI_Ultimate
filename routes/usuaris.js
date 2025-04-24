@@ -25,7 +25,6 @@ const writeDataUsuaris = (data) => {
 router.get('/', (req, res) => {
     const user={name:"Angel"}
     const htmlMessage = `
-    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
     <a href="http://localhost:3002/">Home</a>`;
     const data = readDataUsuaris();
     res.render("usuaris",{user, data,htmlMessage})
