@@ -36,7 +36,7 @@ app.get("/reserves", (req, res) => {
 });
 
 // Endpoint per obtenir una reserva per id
-app.get("/reserves/:id", (req, res) => {
+app.get("/reserves/:id", (req, res) => { 
     const data = readData();
     const id = parseInt(req.params.id);
     const reserve = data.reserves.find((reserve) => reserve.id === id);

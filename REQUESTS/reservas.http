@@ -1,4 +1,4 @@
-GET http://localhost:3000/reserves
+GET http://localhost:3000/reserves 
 
 ###
 

@@ -1,7 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 
-const router = express.Router()
+const router = express.Router() 
 
 const readDataReservas = () => {
     try {

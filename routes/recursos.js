@@ -19,7 +19,7 @@ const writeDataRecursos = (data) => {
     } catch (error) {
         console.log(error);
     }
-};
+}; 
 
 //Endpoint recusos
 router.get('/', (req, res) => {

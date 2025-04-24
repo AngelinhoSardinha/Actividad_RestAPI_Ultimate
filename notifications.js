@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 const readData = () => {
     try {
-        const data = fs.readFileSync("./notifications.json");
+        const data = fs.readFileSync("./notifications.json"); 
         return JSON.parse(data);
     } catch (error) {
         console.log(error);

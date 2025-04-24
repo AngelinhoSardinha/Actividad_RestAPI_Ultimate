@@ -8,7 +8,7 @@ Esta API permite gestionar un sistema de reservas, incluyendo usuarios, recursos
 | Método | Ruta              | Descripción |
 |--------|-------------------|-------------|
 | GET    | `/usuario`        | Lista todos los usuarios |
-| GET    | `/usuario/:id`    | Obtiene un usuario por ID |
+| GET    | `/usuario/:id`    | Obtiene un usuario por ID | 
 | POST   | `/usuario`        | Crea un nuevo usuario |
 | PUT    | `/usuario/:id`    | Actualiza un usuario |
 | DELETE | `/usuario/:id`    | Elimina un usuario |

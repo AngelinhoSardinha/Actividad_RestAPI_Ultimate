@@ -1,4 +1,4 @@
-GET http://localhost:3000/notificacions
+GET http://localhost:3000/notificacions 
 
 ###
 

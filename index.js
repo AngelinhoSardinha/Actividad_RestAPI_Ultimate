@@ -2,7 +2,7 @@ import fs from "fs";
 import bodyParser from "body-parser";
 import express from "express";
 import reservesRoutes from "./routes/reserves.js";
-import recursosRoutes from "./routes/recursos.js";
+import recursosRoutes from "./routes/recursos.js"; 
 
 
 const app = express();

@@ -13,7 +13,7 @@ const readData = () => {
     } catch (error) {
         console.log(error);
     }
-};
+}; 
 
 // Funció per escriure informació
 const writeData = (data) => {

@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 app.get("/recursos", (req, res) => {
     const data = readData();
     res.json(data.recursos);
-});
+}); 
 
 // Endpoint per obtenir un recurs per un id
 app.get("/recursos/:id", (req, res) => {

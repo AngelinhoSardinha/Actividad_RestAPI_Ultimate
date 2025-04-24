@@ -12,7 +12,7 @@
         },
         {
             "id": 33,
-            "tipo": "Vehicles",
+            "tipo": "Vehicles", 
             "Estat": "Fora de servei"
         }
     ]
