@@ -24,7 +24,8 @@
                         </strong>
                         <span>nombre: <%= reserves.Estat %></span>
                         <span>nombre: <%= reserves.Temps %></span>
-                        <span><a href="/reserves/<%=reserves.id%>">Detalle de la reserva</a></span>
+                        <span><a href="/reserves/<%=reserves.id%>" class="btn-formulario">Detalle de la reserva</a>
+                        <a href="/views/reservesForm.html" class="btn-formulario">Modificar Recurso</a></span>
                     </li>
                     <% }) %>
             </ul>

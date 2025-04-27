@@ -23,7 +23,8 @@
                         <p><%= notification.description %></p>
                         <small>Fecha: <%= notification.date %></small>
                         <br>
-                        <a href="/notifications/<%= notification.id %>">Ver detalle</a>
+                        <a href="/notifications/<%= notification.id %>" class="btn-formulario">Ver detalle</a>
+                        <a href="/views/notificationsForm.html" class="btn-formulario">Modificar Notificación</a>
                     </li>
                 <% }) %>
             </ul>
