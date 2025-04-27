@@ -4,22 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto en progreso</title>
+    <title>Detall de la Notificació</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Gestió de las Notificaciones per <%= user.name %>!</h1>
+    <header> 
+        <h1>Gestió de les Notificacions per <%= user.name %>!</h1>
+        <h2><a href="/notifications">Volver a la lista de notificaciones</a></h2>
     </header>
     <main>
         <section>
-            <h2>Detalle de la Notificación</h2>
-            <ul class="notification-detail">
-                <li class="notification-item">
-                    <strong><%= notificacio.title %></strong>
-                    <p><%= notificacio.description %></p>
-                    <small>Fecha: <%= notificacio.date %></small>
+            <h2>Detall de la Notificació</h2>
+            <ul class="product-list">
+                <li class="product-item">
+                    <strong>
+                        <%= notification.title %>
+                    </strong>
+                    <span>Descripció: <%= notification.description %></span>
+                    <span>Data: <%= notification.date %></span>
                 </li>
             </ul>
         </section>

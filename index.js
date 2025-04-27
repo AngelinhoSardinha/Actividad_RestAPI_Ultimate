@@ -4,6 +4,7 @@ import express from "express";
 import reservesRoutes from "./routes/reserves.js";
 import recursosRoutes from "./routes/recursos.js"; 
 import notificationsRoutes from "./routes/notifications.js"; 
+import usuarisRoutes from "./routes/usuaris.js"; 
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 app.use("/recursos", recursosRoutes);
 app.use("/reserves", reservesRoutes);
 app.use("/notifications", notificationsRoutes);
+app.use("/usuaris", usuarisRoutes);
 
 //Escucho
 app.listen(3002, () => {

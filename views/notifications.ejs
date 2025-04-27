@@ -16,14 +16,14 @@
     <main>
         <section>
             <h2>Lista de Notificaciones</h2>
-            <ul class="notification-list">
-                <% data.notificacions.forEach(notificacion => { %>
-                    <li class="notification-item">
-                        <strong><%= notificacion.title %></strong>
-                        <p><%= notificacion.description %></p>
-                        <small>Fecha: <%= notificacion.date %></small>
+            <ul class="product-list">
+                <% data.notificacions.forEach(notification => { %>
+                    <li class="product-item">
+                        <strong><%= notification.title %></strong>
+                        <p><%= notification.description %></p>
+                        <small>Fecha: <%= notification.date %></small>
                         <br>
-                        <a href="/notificacions/<%= notificacion.id %>">Ver detalle</a>
+                        <a href="/notifications/<%= notification.id %>">Ver detalle</a>
                     </li>
                 <% }) %>
             </ul>

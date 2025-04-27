@@ -1,8 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 
-const router = express.Router()
-
+const router = express.Router();
 
 const readDataUsuaris = () => {
     try {
@@ -15,29 +14,32 @@ const readDataUsuaris = () => {
 
 const writeDataUsuaris = (data) => {
     try {
-        fs.writeFileSync("./usuaris.json", JSON.stringify(data));
+        fs.writeFileSync("./usuaris.json", JSON.stringify(data, null, 2)); // formato bonito
     } catch (error) {
         console.log(error);
     }
-}; 
+};
 
-//Endpoint recusos
+// Endpoint para obtener todos los usuarios
 router.get('/', (req, res) => {
-    const user={name:"Angel"}
-    const htmlMessage = `
-    <a href="http://localhost:3002/">Home</a>`;
+    const user = { name: "Angel" };
+    const htmlMessage = `<a href="http://localhost:3002/">Home</a>`;
     const data = readDataUsuaris();
-    res.render("usuaris",{user, data,htmlMessage})
-    //res.json(data.products);
- }); 
+    res.render("usuaris", { user, data, htmlMessage });
+});
 
-// Endpoint per obtenir un recurs per un id
+// Endpoint para obtener un usuario por ID
 router.get("/:id", (req, res) => {
     const data = readDataUsuaris();
-    const user = {name:"Angel"}
+    const user = { name: "Angel" };
     const id = parseInt(req.params.id);
-    const usuari = data.usuaris.find((usuari) => usuari.id === id);
-    res.render("usuarisDetail", {user, usuari})
+    const usuari = data.Usuaris.find((usuari) => usuari.id === id); // --> CORREGIDO "Usuaris"
+
+    if (!usuari) {
+        return res.status(404).send("Usuari no trobat");
+    }
+
+    res.render("usuarisDetail", { user, usuari });
 });
 
 export default router;
