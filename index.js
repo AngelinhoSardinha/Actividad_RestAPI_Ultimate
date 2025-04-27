@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import express from "express";
 import reservesRoutes from "./routes/reserves.js";
 import recursosRoutes from "./routes/recursos.js"; 
+import notificationsRoutes from "./routes/notifications.js"; 
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/recursos", recursosRoutes);
 app.use("/reserves", reservesRoutes);
+app.use("/notifications", notificationsRoutes);
 
 //Escucho
 app.listen(3002, () => {

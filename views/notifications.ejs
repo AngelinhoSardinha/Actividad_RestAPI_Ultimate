@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto en progreso</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestió de las Notificaciones para <%= user.name %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Lista de Notificaciones</h2>
+            <ul class="notification-list">
+                <% data.notificacions.forEach(notificacion => { %>
+                    <li class="notification-item">
+                        <strong><%= notificacion.title %></strong>
+                        <p><%= notificacion.description %></p>
+                        <small>Fecha: <%= notificacion.date %></small>
+                        <br>
+                        <a href="/notificacions/<%= notificacion.id %>">Ver detalle</a>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

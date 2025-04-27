@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto en progreso</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestió de las Notificaciones per <%= user.name %>!</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Detalle de la Notificación</h2>
+            <ul class="notification-detail">
+                <li class="notification-item">
+                    <strong><%= notificacio.title %></strong>
+                    <p><%= notificacio.description %></p>
+                    <small>Fecha: <%= notificacio.date %></small>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
